@@ -22,7 +22,7 @@ RUN bundle install && \
 USER 10001
 COPY --chown=10001:10001  . ./
 # Precompile rails assets
-RUN rake assets:precompile
+RUN bin/rake assets:precompile
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
